@@ -44,8 +44,8 @@ namespace AlmagalApp.Controllers
             return BadRequest(inv);
         }
         // GET api/<InvoiceController>/5
-        [HttpGet("{invoicecode}")]
-        public async Task<IActionResult> Get(int invoicecode)
+        [HttpGet("Getbycode/{invoicecode}")]
+        public async Task<IActionResult> Getbycode(int invoicecode)
         {
             var inv = await _invoice.Get(invoicecode);
             if (inv.response.Status)
